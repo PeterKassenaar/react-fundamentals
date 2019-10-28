@@ -1,39 +1,83 @@
 // App.js
 import React, {Component} from 'react';
+import logo from '../img/logo-react-small.png'
 
 // Child components
-import Counter from "./Counter/Counter";
-import DisplayCounter from "./DisplayCounter/DisplayCounter";
+import CountryList from "./CountryList/CountryList";
+import CountryDetail from "./CountryDetail/CountryDetail";
+
+// Data
+import countryData from '../data/CountryData';
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
 
     state = {
-        counter: 0
+        countries: countryData.countries,
+        showDetails: false,
+        countryIndex: 0,
+        currentCountry: countryData.countries[0]
     };
-    // above is equivalent to (but shorter than):
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         counter: 0
-    //     }
-    // }
 
-
-    incrementCounter(val) {
-        const newCounter = this.state.counter + val;
+    // helper functions
+    toggleDetails() {
         this.setState({
-            counter: newCounter
-        });
+            showDetails: !this.state.showDetails
+        })
     }
 
-    // workshop: implement decrementCounter()
+    prevCountry() {
+        // this will *not* work
+        // this.state.currentCountry = this.state.data[++this.state.countryIndex];
+        // from the docs: https://reactjs.org/docs/faq-state.html
 
+        // So, use setState(). Optional: pass in the current state object.
+        // First, calculate new index position in array
+        let newIndex = this.state.countryIndex > 0
+            ? this.state.countryIndex - 1
+            : countryData.countries.length - 1;
+        this.setState({
+            countryIndex: newIndex,
+            currentCountry: this.state.countries[newIndex]
+        })
+    }
+
+    nextCountry() {
+
+        // calculate new index position in array
+        let newIndex = this.state.countryIndex === countryData.countries.length - 1
+            ? 0
+            : this.state.countryIndex + 1;
+        this.setState({
+            countryIndex: newIndex,
+            currentCountry: this.state.countries[newIndex]
+        })
+    }
+
+    // Render UI
     render() {
-        return (<div className="container">
-                <h2>Hello React</h2>
-                <Counter increment={() => this.incrementCounter(40)} val={40}/>
-                <DisplayCounter counter={this.state.counter}/>
+        return (
+            <div className="container">
+                <h1>
+                    <img src={logo} alt="react logo" width={80}/>
+                    React vacation picker</h1>
+                <div className="row">
+                    <div className="col">
+                        <CountryList
+                            country={this.state.currentCountry}
+                            next={() => this.nextCountry()}
+                            prev={() => this.prevCountry()}
+                            toggle={() => this.toggleDetails()}/>
+                    </div>
+                    <div className="col">
+                        {
+                            // conditional rendering
+                            this.state.showDetails &&
+                            <CountryDetail country={this.state.currentCountry}/>
+                        }
+                    </div>
+                </div>
+
             </div>
         )
     };
