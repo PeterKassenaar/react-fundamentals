@@ -5,7 +5,6 @@ import React, {Component} from 'react'
 class CountryDetail extends Component {
 
     render() {
-        // debugger;
         const country = this.props.country;
         return (
             <div>
@@ -23,22 +22,6 @@ class CountryDetail extends Component {
                     <li className="list-group-item">
                         details: {country.details}
                     </li>
-                    {/*<li className="list-group-item">*/}
-                        {/*<img*/}
-                        {/*    className="img-fluid"*/}
-                        {/*    src={require('../../img/countries/' + country.img)} alt={country.name}/>*/}
-                    {/*</li>*/}
-                    {/*<li className="list-group-item">*/}
-                    {/*    /!*Like a Vue Computed Property...*!/*/}
-                    {/*    {country.cost > 4000*/}
-                    {/*        ? <span className="badge badge-warning">Expensive!</span>*/}
-                    {/*        : ''*/}
-                    {/*    }*/}
-                    {/*    {country.cost < 1000*/}
-                    {/*        ? <span className="badge badge-warning">on sale!</span>*/}
-                    {/*        : ''*/}
-                    {/*    }*/}
-                    {/*</li>*/}
                 </ul>
             </div>
         )

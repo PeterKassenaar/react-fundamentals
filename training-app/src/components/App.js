@@ -15,8 +15,6 @@ class App extends Component {
 
     state = {
         countries: countryData.countries,
-        showDetails: false,
-        countryIndex: 0,
         currentCountry: countryData.countries[0]
     };
 
@@ -55,6 +53,13 @@ class App extends Component {
         })
     }
 
+    selectCountry(country) {
+        const newIndex = this.state.countries.indexOf(country);
+        this.setState({
+            currentCountry: this.state.countries[newIndex]
+        })
+    }
+
     // Render UI
     render() {
         return (
@@ -65,7 +70,16 @@ class App extends Component {
                             <img src={logo} alt="react logo" width={80}/>
                             React vacation picker
                         </h1>
-                        <VacationPicker countries={this.state.countries}/>
+                        <VacationPicker
+                            select={(country) => this.selectCountry(country)}
+                            countries={this.state.countries}/>
+                    </div>
+                    <div className="col">
+                        {/*{*/}
+                        {/*conditional rendering*/}
+                        {/*this.state.showDetails &&*/}
+                        <CountryDetail country={this.state.currentCountry}/>
+                        {/*}*/}
                     </div>
                 </div>
                 {/*        <CountryList*/}
@@ -74,13 +88,7 @@ class App extends Component {
                 {/*            prev={() => this.prevCountry()}*/}
                 {/*            toggle={() => this.toggleDetails()}/>*/}
                 {/*    </div>*/}
-                {/*    <div className="col">*/}
-                {/*        {*/}
-                {/*            // conditional rendering*/}
-                {/*            this.state.showDetails &&*/}
-                {/*            <CountryDetail country={this.state.currentCountry}/>*/}
-                {/*        }*/}
-                {/*    </div>*/}
+
                 {/*</div>*/}
             </div>
         )
