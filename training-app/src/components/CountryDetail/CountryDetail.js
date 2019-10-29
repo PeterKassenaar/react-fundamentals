@@ -8,7 +8,7 @@ class CountryDetail extends Component {
         const country = this.props.country;
         return (
             <div>
-                <h2>CountryDetail</h2>
+                <h2>{country.name}</h2>
                 <ul className="list-group">
                     <li className="list-group-item">
                         id: {country.id}

@@ -5,6 +5,7 @@ import logo from '../img/logo-react-small.png'
 // Child components
 import CountryList from "./CountryList/CountryList";
 import CountryDetail from "./CountryDetail/CountryDetail";
+import VacationPicker from './VacationPicker/VacationPicker'
 
 // Data
 import countryData from '../data/CountryData';
@@ -58,26 +59,29 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <h1>
-                    <img src={logo} alt="react logo" width={80}/>
-                    React vacation picker</h1>
                 <div className="row">
-                    <div className="col">
-                        <CountryList
-                            country={this.state.currentCountry}
-                            next={() => this.nextCountry()}
-                            prev={() => this.prevCountry()}
-                            toggle={() => this.toggleDetails()}/>
-                    </div>
-                    <div className="col">
-                        {
-                            // conditional rendering
-                            this.state.showDetails &&
-                            <CountryDetail country={this.state.currentCountry}/>
-                        }
+                    <div className="col-md-6">
+                        <h1>
+                            <img src={logo} alt="react logo" width={80}/>
+                            React vacation picker
+                        </h1>
+                        <VacationPicker countries={this.state.countries}/>
                     </div>
                 </div>
-
+                {/*        <CountryList*/}
+                {/*            country={this.state.currentCountry}*/}
+                {/*            next={() => this.nextCountry()}*/}
+                {/*            prev={() => this.prevCountry()}*/}
+                {/*            toggle={() => this.toggleDetails()}/>*/}
+                {/*    </div>*/}
+                {/*    <div className="col">*/}
+                {/*        {*/}
+                {/*            // conditional rendering*/}
+                {/*            this.state.showDetails &&*/}
+                {/*            <CountryDetail country={this.state.currentCountry}/>*/}
+                {/*        }*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         )
     };
