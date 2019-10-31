@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 
 class VacationPicker extends Component {
 
-    // Mounting lifecycle hook
+    // 1. Mounting lifecycle hook
     componentDidMount() {
         console.log('VacationPicker :: componentDidMount() called...');
     }
