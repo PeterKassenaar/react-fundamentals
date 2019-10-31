@@ -5,7 +5,6 @@ import logo from '../img/logo-react-small.png'
 // Child components
 import CountryList from "./CountryList/CountryList";
 import CountryDetail from "./CountryDetail/CountryDetail";
-import VacationPicker from './VacationPicker/VacationPicker'
 
 // Data
 import countryData from '../data/CountryData';
@@ -44,7 +43,6 @@ class App extends Component {
     }
 
     nextCountry() {
-
         // calculate new index position in array
         let newIndex = this.state.countryIndex === countryData.countries.length - 1
             ? 0
@@ -53,32 +51,6 @@ class App extends Component {
             countryIndex: newIndex,
             currentCountry: this.state.countries[newIndex]
         })
-    }
-
-    selectCountry(country) {
-        const newIndex = this.state.countries.indexOf(country);
-        this.setState({
-            currentCountry: this.state.countries[newIndex]
-        })
-    }
-
-    // Toggle the 'favorite' property of a country
-    toggleFavorite(country) {
-        // 1. find the country in the array
-        const index = this.state.countries.indexOf(country);
-        // 2. Toggle the fav-state for the current country
-        const newCurrentCountry = {...this.state.currentCountry, favorite: !this.state.currentCountry.favorite};
-        // 3. Create new array of countries and replace the currentCountry (w/ the updated favorite property)
-        let newCountries = [...this.state.countries];
-        newCountries[index] = newCurrentCountry;
-
-        // 4. update the application state
-        this.setState({
-            currentCountry: newCurrentCountry,
-            countries: newCountries
-        });
-        // 5. Sincere question:
-        // The above code works, but can this be done quicker/smarter?
     }
 
     // Render UI
