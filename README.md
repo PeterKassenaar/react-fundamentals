@@ -1,5 +1,12 @@
 # react-fundamentals
 Example code and exercises on the training React Fundamentals by Peter Kassenaar
+## Contents
+The repo has an `examples` folder with all the code examples. They are numbered for your reference. A quick guide:
+- 1xx - General components, props.
+- 2xx - Working with data.
+- 3xx - Styling components.
+- 4xx - Working with form elements.
+- 5xx - ...
 
 ## Useful links
 - ...
