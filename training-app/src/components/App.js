@@ -24,17 +24,12 @@ class App extends Component {
 
     // using the componentDidMount() hook to fetch the countries
     // from the RestCountries API, available via the global URL
-    componentDidMount() {
-        // using setTimeout here, to emulate network delay
-        setTimeout(() => {
-            axios.get(url)
-                .then(response => {
-                    this.setState({
-                        isLoaded: true,
-                        countries: response.data
-                    })
-                })
-        }, 1000)
+    async componentDidMount() {
+        const response = await axios.get(url)
+        this.setState({
+            isLoaded: true,
+            countries: response.data
+        })
     }
 
     // get details for a specific country
