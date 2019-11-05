@@ -8,8 +8,6 @@ class VacationPicker extends Component {
 	// In Real life apps you would lift this state up to the parent component.
 	state = {
 		visitedCountries: [],
-		prices: [1000, 2000, 3000, 4000, 5000],
-		price: 1000
 	};
 
 	checkCountry(country) {
@@ -20,21 +18,12 @@ class VacationPicker extends Component {
 		});
 	}
 
-	updatePrice(event) {
-		console.log('selected value:', event.target.value);
-		this.setState({
-			price: event.target.value
-		})
-	}
-
 	render() {
 		return (
 			<div>
 				<ul className="list-group">
 					{this.props.countries.map(country =>
 						<li
-							// conditionally add class name:
-							// className={'list-group-item ' + (this.state.price > country.cost ? 'active' : '')}
 							className="list-group-item"
 							key={country.id}
 							id={country.id}
@@ -52,29 +41,12 @@ class VacationPicker extends Component {
 						</li>
 					)}
 				</ul>
-				{/*Selection list*/}
-				{/*<h2>Mark countries cheaper than...</h2>*/}
-				{/*<div className="form-group">*/}
-				{/*	<select*/}
-				{/*		value={this.state.price}*/}
-				{/*		onChange={(e) => this.updatePrice(e)}*/}
-				{/*		className="form-control"*/}
-				{/*		name="select"*/}
-
-				{/*	>*/}
-				{/*		{*/}
-				{/*			this.state.prices.map(price =>*/}
-				{/*				<option*/}
-				{/*					key={price}*/}
-				{/*					value={price}>{price}</option>*/}
-				{/*			)*/}
-				{/*		}*/}
-				{/*	</select>*/}
-				{/*</div>*/}
 				{/*Selected favorite country */}
 				<h2>My favorite:</h2>
 				<ul className="list-group">
 					{
+						// workshop: this can be done quicker/simpler, by
+						// NOT using an array. How?
 						this.state.visitedCountries.map(country =>
 							<li className="list-group-item"
 								key={country.id}
