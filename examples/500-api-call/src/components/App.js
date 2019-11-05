@@ -68,6 +68,7 @@ class App extends Component {
                         />
                     </div>
                     <div className="col-md-6">
+                        {/*Pass the picked country down to a detail component*/}
                         {
                             this.state.country &&
                             <CountryDetail country={this.state.country}/>
