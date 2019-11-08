@@ -1,75 +1,64 @@
 // App.js
 import React, {Component} from 'react';
-import logo from '../img/logo-react-small.png';
-import axios from 'axios';
+import logo from '../img/logo-react-small.png'
+
+// Router stufff
+import {BrowserRouter, Redirect, Route} from "react-router-dom";
+import MainNavigation from "./MainNavigation/MainNavigation";
 
 // Child components
 import VacationPicker from './VacationPicker/VacationPicker'
-import LoadingIndicator from "./Loader/LoadingIndicator";
-import CountryDetail from "./CountryDetail/CountryDetail";
 
-// the API-URLs to get the data from
-const url = 'https://restcountries.eu/rest/v2/all';
-const detail_url = 'https://restcountries.eu/rest/v2/name';
+// Data
+import countryData from '../data/CountryData';
+import AddCountries from "./AddCountries/AddCountries";
+import About from "./About/About";
+// import AppRoutes from "./App.routes";
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
 
     state = {
-        error: null,
-        isLoaded: false,
-        countries: [],
-        country: ''
+        countries: countryData.countries,
     };
 
-    // using the componentDidMount() hook to fetch the countries
-    // from the RestCountries API, available via the global URL
-    async componentDidMount() {
-        const response = await axios.get(url)
+    addCountry(country) {
         this.setState({
-            isLoaded: true,
-            countries: response.data
+            countries: [...this.state.countries, country]
         })
-    }
-
-    // get details for a specific country
-    getCountry(name) {
-        axios.get(`${detail_url}/${name}`)
-            .then(response => {
-                this.setState({
-                    country: response.data[0]
-                })
-            })
+        // TODO: POST  the new country to a database
     }
 
     // Render UI
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h1>
-                            <img src={logo} alt="react logo" width={80}/>
-                            React vacation picker
-                        </h1>
-                        {/*Show a loading indicator as long as the countries are not loaded*/}
-                        {
-                            !this.state.isLoaded &&
-                            <LoadingIndicator/>
-                        }
-                        <VacationPicker
-                            countries={this.state.countries}
-                            select={(country) => this.getCountry(country)}
-                        />
+            <BrowserRouter>
+                <div className="container">
+                    <h1>
+                        <img src={logo} alt="react logo" width={80}/>
+                        React vacation picker
+                    </h1>
+                    <div className="row">
+                        <MainNavigation/>
                     </div>
-                    <div className="col-md-6">
-                        {
-                            this.state.country &&
-                            <CountryDetail country={this.state.country}/>
-                        }
+                    <div className="row">
+                        <div className="col-md-6">
+                            <Route path="/" exact render={() => <VacationPicker countries={this.state.countries}/>}/>
+
+                            <Route path="/add"
+                                   render={() => <AddCountries submit={(country) => this.addCountry(country)}/>}/>
+                            <Route path="/about" component={About}/>
+                            <Redirect to="/"/>
+                        </div>
+                        <div className="col-md-6">
+                            {/*We can add a country via the component below, it shows*/}
+                            {/*an example of form submission. The added form is still in-memory only, */}
+                            {/*so on restarting the application, the new countries are lost!*/}
+                            {/*<AddCountries submit={(country) => this.addCountry(country)}/>*/}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </BrowserRouter>
         )
     };
 }

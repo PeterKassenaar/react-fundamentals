@@ -1,0 +1,24 @@
+/*Main navigation styles*/
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    width: 100px;
+
+}
+
+ul a {
+    text-decoration: none;
+}
+
+ul a:hover {
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.activeRoute {
+    border-bottom: 3px solid #09d3ac;
+}

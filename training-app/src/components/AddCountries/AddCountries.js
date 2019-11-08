@@ -1,9 +1,5 @@
-// AddCountries - a component that shows controlled/uncontrolled
-// form components.
-// It uses local state for clarity in this demo
-// (i.e. all state and methods are handled inside
-// this component). In a real life app you would pass/lift state up to a
-// parent component.
+// AddCountries - Posting a country to its parent component by
+// composing a 'real' country from various form fields.
 import React, {Component} from 'react';
 
 class AddCountries extends Component {
