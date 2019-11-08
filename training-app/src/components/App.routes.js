@@ -1,23 +1,20 @@
-// App.routes.js - main routes for the application
-import React, {Component} from 'react';
-import {Route, Redirect} from "react-router-dom";
+// App.routes.js - holding the routes and components
+// that this application uses
+import React, {Component} from 'react'
+import Home from "./Home/Home";
+import CountryDetail from "./CountryDetail/CountryDetail";
+import {Redirect, Route} from "react-router";
 
-// components for the routes
-import VacationPicker from "./VacationPicker/VacationPicker";
-import AddCountries from "./AddCountries/AddCountries";
-import About from "./About/About";
-
-class AppRoutes extends Component {
+class Routes extends Component {
     render() {
         return (
-            <div>
-                <Route path="/" exact component={VacationPicker}/>
-                <Route path="/add" component={AddCountries}/>
-                <Route path="/about" component={About}/>
+            <>
+                <Route path="/" exact component={Home}/>
+                <Route path="/detail/:name" component={CountryDetail}/>
                 <Redirect to="/"/>
-            </div>
+            </>
         );
     }
 }
 
-export default AppRoutes;
+export default Routes;
