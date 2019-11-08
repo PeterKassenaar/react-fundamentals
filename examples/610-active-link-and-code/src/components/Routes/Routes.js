@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Home from "../Home/Home";
-import {Redirect, Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 
 class Routes extends Component {
     render() {
