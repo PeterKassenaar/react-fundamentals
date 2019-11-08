@@ -1,64 +1,31 @@
-// Home.js - a wrapper for the vacation picker
-// it contains the Logic and the state of previously App.js
-// (which now holds the <BrowserRouter> and <Route> elements
 import React, {Component} from 'react';
-import axios from "axios";
-import logo from "../../img/logo-react-small.png";
-import LoadingIndicator from "../Loader/LoadingIndicator";
-import VacationPicker from "../VacationPicker/VacationPicker";
+import countryData from "../../data/CountryData";
+import {Link} from "react-router-dom";
 
-// the API-URL to get the data from
-const url = 'https://restcountries.eu/rest/v2/all';
-
-// Our parent component - it holds the state for the child components
 class Home extends Component {
+	state = {
+		countries: countryData.countries
+	};
 
-    state = {
-        error: null,
-        isLoaded: false,
-        countries: []
-    };
-
-    // using the componentDidMount() hook to fetch the countries
-    // from the RestCountries API, available via the global URL
-    componentDidMount() {
-        axios.get(url)
-            .then(response => {
-                this.setState({
-                    isLoaded: true,
-                    countries: response.data
-                })
-            })
-    }
-
-    // Using History Pushstate API from the browser/router to
-    // navigate to the Detail Component
-    getCountry(name) {
-        const route = `/detail/${name}`;
-        this.props.history.push(route);
-    }
-
-    // Render UI
-    render() {
-        return (
-            // Using a React Fragment here
-            <>
-                <h1>
-                    <img src={logo} alt="react logo" width={80}/>
-                    React vacation picker
-                </h1>
-                {/*Show a loading indicator as long as the countries are not loaded*/}
-                {
-                    !this.state.isLoaded &&
-                    <LoadingIndicator/>
-                }
-                <VacationPicker
-                    countries={this.state.countries}
-                    select={(country) => this.getCountry(country)}
-                />
-            </>
-        )
-    };
+	render() {
+		return (
+			<div>
+				<h1>Home Component</h1>
+				<hr/>
+				<h2>List of countries</h2>
+				<ul className="list-group">
+					{this.state.countries.map(country =>
+						<li className="list-group-item"
+							key={country.id}>
+							<Link to={`/detail/${country.id}/${country.name}`}>
+								{country.name}
+							</Link>
+						</li>
+					)}
+				</ul>
+			</div>
+		)
+	}
 }
 
-export default Home;
+export default Home

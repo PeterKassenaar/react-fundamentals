@@ -22,7 +22,7 @@ class CountryDetail extends Component {
         console.log({prevProps}, {prevState});
         // Need to wrap in an if-statement, otherwise
         // there'll be an infinite loop.
-        // There even might be a better solution, b/c now the
+        // There even might be a better solution (?), b/c now the
         // component is rendered twice.
         if (prevProps.country.name !== this.props.country.name) {
             this.setState({

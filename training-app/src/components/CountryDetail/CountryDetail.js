@@ -1,65 +1,67 @@
-// CountryDetail.js - show details of a specific country
-import React, {Component} from 'react'
-import axios from "axios";
+// CountryDetail - fetching parameters from the URL and retrieving the correct country
+import React, {Component} from 'react';
+import countryData from "../../data/CountryData";
 
-const detail_url = 'https://restcountries.eu/rest/v2/name';
+// import '../../img/countries/amsterdam.jpg'
 
-// A pure presentational component
 class CountryDetail extends Component {
-
+    // We are passing in a country ID and name, so we need (at least)
+    // two state parameters.
     state = {
+        id: null,
+        name: '',
+        countries: countryData.countries,
         country: ''
     };
 
-    // Get the details for a specific country
+    // retrieve id and name from the querystring
+    // Note the usage of ES6 destructuring here and
+    // composing the setState() object
     componentDidMount() {
-        const {name} = this.props.match.params;
-
-        axios.get(`${detail_url}/${name}`)
-            .then(response => {
-                this.setState({
-                    country: response.data[0]
-                })
-            })
-    }
-
-    // Go to the home page from the button below
-    goHome() {
-        this.props.history.push('/')
+        const {id, name} = this.props.match.params;
+        const country = this.state.countries.find(c => c.id === +id);
+        this.setState({
+            id,
+            name,
+            country
+        })
     }
 
     render() {
-        const country = this.state.country;
         return (
             <div>
-                <h2>Details for {country.name}</h2>
-                <ul className="list-group">
-                    <li className="list-group-item">
-                        name: {country.name}
-                    </li>
-                    <li className="list-group-item">
-                        capital: {country.capital}
-                    </li>
-                    <li className="list-group-item">
-                        population: {country.population}
-                    </li>
-                    <li className="list-group-item">
-                        Region: {country.region}, {country.subregion}
-                    </li>
-                    <li className="list-group-item">
-                        <img
-                            className="img-fluid"
-                            src={country.flag} alt={country.name}/>
-                    </li>
-                </ul>
-                <button
-                    className="btn btn-info"
-                    onClick={() => this.goHome()}>
-                    Go Home
-                </button>
+                <h3>CountryDetail works!</h3>
+                <p>Requested country id: {this.state.id}</p>
+                <p>Requested country name: {this.state.name}</p>
+                {
+                    // Using conditional rendering here, b/c state is async
+                    // Otherwise it throws an error 'cannot read property id of undefined'
+                    this.state.country &&
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            id: {this.state.country.id}
+                        </li>
+                        <li className="list-group-item">
+                            name: {this.state.country.name}
+                        </li>
+                        <li className="list-group-item">
+                            capital: {this.state.country.capital}
+                        </li>
+                        <li className="list-group-item">
+                            details: {this.state.country.details}
+                        </li>
+                        {/*Some webpack magic below, to resolve the correct image*/}
+                        <li className="list-group-item">
+                            <img
+                                className="img-fluid"
+                                src={require(`../../img/countries/${this.state.country.img}`)}
+                                alt={this.state.country.name}/>
+                        </li>
+                    </ul>
+                }
             </div>
-        )
+        );
     }
 }
 
-export default CountryDetail
+export default CountryDetail;
