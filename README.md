@@ -8,7 +8,8 @@ The repo has an `examples` folder with all the code examples. They are numbered 
 - 4xx - Working with form elements.
 - 5xx - Working with API's
 - 6xx - React Router
-- 7xx - ...
+- 7xx - React Hooks
+- 8xx -
 
 ## Useful links
 - ...
