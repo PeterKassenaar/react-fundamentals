@@ -1,7 +1,9 @@
 import React from 'react'
 
-// Counter is now also a display component. It just shows two buttons. It receices the
-// functionality for the buttons from the parent (<App />) component.
+// Counter is now also a display component.
+// It just shows two buttons. It receices the
+// functionality for the buttons from the
+// parent (<App />) component.
 function Counter(props) {
 	return (
 		<div>
