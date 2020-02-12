@@ -12,12 +12,16 @@ The repo has an `examples` folder with all the code examples. They are numbered 
 - 7xx - React Hooks
 - 8xx -
 
-Every example is a small mini project. Perform an `npm install` for every folder you want to examine. This is not a monorepo. 
+Every example is a small mini project. Perform an `npm install` for every folder you want to examine. This is not a monorepo.
+
+## Tooling
+- Create React App: https://create-react-app.dev/
+- React Devtools (Chrome Extension): https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en 
 
 ## Useful links
 - Server Sided Rendering (SSR) of React applications: https://alligator.io/react/server-side-rendering/
 - Transforming Class components to Function components (/w hooks):  https://wattenberger.com/blog/react-hooks
-- How Google indexes your JavaScript application (Martin Splitt): https://www.youtube.com/watch?v=Op8Q8bUAKNc
+- How Google indexes your JavaScript application (Martin Splitt): https://www.youtube.com/playlist?list=PLKoqnv2vTMUPOalM1zuWDP9OQl851WMM9
 
 ## Book a React training?
 
