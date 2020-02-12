@@ -15,7 +15,9 @@ The repo has an `examples` folder with all the code examples. They are numbered 
 Every example is a small mini project. Perform an `npm install` for every folder you want to examine. This is not a monorepo. 
 
 ## Useful links
-- ...
+- Server Sided Rendering (SSR) of React applications: https://alligator.io/react/server-side-rendering/
+- Transforming Class components to Function components (/w hooks):  https://wattenberger.com/blog/react-hooks
+- How Google indexes your JavaScript application (Martin Splitt): https://www.youtube.com/watch?v=Op8Q8bUAKNc
 
 ## Book a React training?
 
