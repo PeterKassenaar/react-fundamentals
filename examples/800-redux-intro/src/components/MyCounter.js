@@ -8,12 +8,9 @@ const mapStateToProps = state => {
 	return {counter: state.counter};
 };
 
-
-
-
-// 2. This is the actual component
+// 2. This is the actual component, but only for internal use! We don't export it.
 const Counter = ({counter}) => (
-		<h1>Current value: {counter}</h1>
+	<h1>Current value: {counter}</h1>
 );
 
 // 3. The exported component is the result of
@@ -24,3 +21,5 @@ const Counter = ({counter}) => (
 const MyCounter = connect(mapStateToProps)(Counter);
 
 export default MyCounter;
+
+

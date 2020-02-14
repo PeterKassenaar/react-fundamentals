@@ -12,7 +12,6 @@ export const increment = (payload = 1) => {
 export const decrement = (payload = 1) => {
 	return {type: DECREMENT, payload}
 };
-
 // reset action doesn't have a payload. It always resets
 // to 0.
 export const reset = () => {
