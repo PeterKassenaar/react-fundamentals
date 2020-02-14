@@ -7,6 +7,7 @@ import CountryDetail from "./CountryDetail/CountryDetail";
 import VacationPicker from './VacationPicker/VacationPicker'
 // Data
 import countryData from '../data/CountryData';
+import CountriesViaApi from "./CountriesViaApi/CountriesViaApi";
 
 // Our parent component - it holds the state for the child components
 // We are using function components here, to demonstrate the usage
@@ -44,6 +45,11 @@ function App() {
                     <CountryDetail country={currentCountry}/>
                 </div>
             </div>
+            {/*<div className="row">*/}
+            {/*    <div className="col">*/}
+            {/*        <CountriesViaApi/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
 }
