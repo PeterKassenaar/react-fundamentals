@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {decrement, increment, reset} from "../actions";
+import {decrement, increment, reset} from "../store/actions/counter-actions";
 import {connect} from "react-redux";
 
-// 4. Using mapDispatchToProps
+// mapDispatchToProps
 const mapDispatchToProps = (dispatch) => {
     return {
         // The increment action now receives a value from the textbox as payload.

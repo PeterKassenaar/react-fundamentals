@@ -2,11 +2,12 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-// 1. literally map the state to props for this component.
-// We now want the state.counter property
+// Note: since we now use multiple reducers, we need to tell the function
+// from which reducer it should pull the state. In our case, the counterReducer
 const mapStateToProps = state => {
+    console.log(state); // some logging, to inspect the complete state
     return {
-        counter: state.counter,
+        counter: state.counterReducer.counter
     };
 };
 
