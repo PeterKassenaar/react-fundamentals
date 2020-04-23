@@ -1,11 +1,13 @@
 // ../message-reducer.js
 import {RESET_MESSAGE, SET_MESSAGE} from "../constants/action-types";
+import initialState from "./initialState";
 
-const initialState = {
-    message: ''
-};
+//
+// const initialState = {
+//     message: ''
+// };
 
-const messageReducer = (state = initialState, action) => {
+const messageReducer = (state = initialState.msg, action) => {
     if (action.type === SET_MESSAGE) {
         return {
             msg: action.payload

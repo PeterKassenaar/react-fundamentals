@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 const mapStateToProps = state => {
     console.log(state); // some logging, to inspect the complete state
     return {
-        counter: state.counterReducer.counter
+        counter: state.counterReducer.counter,
     };
 };
 

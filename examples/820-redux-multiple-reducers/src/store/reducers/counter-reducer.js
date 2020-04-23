@@ -1,6 +1,7 @@
 // ../counter-reducer.js
 // Create initialState and a counterReducer.
 import {DECREMENT, INCREMENT, RESET} from "../constants/action-types";
+// OR: import initialState from "./initialState"; // and remove initialState below
 
 const initialState = {
     counter: 0

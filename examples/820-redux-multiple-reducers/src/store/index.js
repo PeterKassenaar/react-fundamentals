@@ -1,7 +1,7 @@
 
 // src/js/store/index.js
 
-// Step 1 - Create the store
+// Create the store
 import { createStore } from "redux";
 import rootReducer from "./reducers/index"; // A combination of reducers
 
