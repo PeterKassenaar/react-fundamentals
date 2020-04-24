@@ -4,9 +4,7 @@ import {resetCountries, searchCountries} from "../../store/actions/country-actio
 import CountryList from "../CountryList/CountryList";
 
 // In this component; using *both* mapStateToProps and mapDispatchToProps!
-
 const mapStateToProps = state => {
-    console.log({state});
     return {
         countries: state.countryReducer.countries,
         loading: state.countryReducer.loading,
@@ -14,11 +12,11 @@ const mapStateToProps = state => {
     };
 };
 
-
 // mapDispatchToProps
 const mapDispatchToProps = dispatch => {
     return {
-        // The increment action now receives a value from the textbox as payload.
+        // We dispatch the 'thunk' as an action.
+        // The thunk in turn dispatches subsequent actions.
         searchCountries: (name) => dispatch(searchCountries(name)),
         resetCountries: () => dispatch(resetCountries())
     };

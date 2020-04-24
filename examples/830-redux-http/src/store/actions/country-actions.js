@@ -1,4 +1,4 @@
-// .../actions/message-actions.js
+// .../actions/country-actions.js
 import {
     FETCH_COUNTRIES_BEGIN,
     FETCH_COUNTRIES_SUCCESS,
@@ -35,7 +35,7 @@ export const resetCountries = () => {
     }
 };
 
-// Actions, called from the component.
+// The thunk, called from the component.
 // It is utilizing the action creators created above.
 export const searchCountries = name => {
     // This is actually the 'thunk'. This function *returns a function* that
@@ -55,7 +55,7 @@ export const searchCountries = name => {
                 .then(countries => {
                     console.log({countries}); // logging
                     dispatch(searchCountriesSuccess(countries));
-                    return countries;
+                    // return countries;
                 })
                 .catch(error => dispatch(searchCountriesError(error)))
         }, 1000)
