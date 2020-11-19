@@ -43,7 +43,6 @@ class App extends Component {
     }
 
     nextCountry() {
-
         // calculate new index position in array
         let newIndex = this.state.countryIndex === countryData.countries.length - 1
             ? 0
