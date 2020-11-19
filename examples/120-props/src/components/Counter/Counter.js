@@ -1,7 +1,7 @@
 import React from 'react'
 
-// Counter is now also a display component.
-// It just shows two buttons. It receices the
+// Counter is now also a display (aka 'dumb') component.
+// It just shows two buttons. It receives the
 // functionality for the buttons from the
 // parent (<App />) component.
 function Counter(props) {
