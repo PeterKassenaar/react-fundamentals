@@ -9,14 +9,14 @@ function CountryDetail (props) {
 
     // updating the state in an effect hook
     useEffect(()=>{
-        // 1. Elke keer als een re-render plaatsvind
+        // 1. Every time a re-render takes place...
         setCount(count + 1);
-        // 3. De returnfunctie wordt uitgevoerd als
-        // 'componentDidUpdate en 'componentWillUnmount' wordt uitgevoerd
+        // 3. This return function is executed as
+        // 'componentDidUpdate en 'componentWillUnmount' are invoked
         return()=>{
             console.log('Component updated');
         }
-    },[props.country]);  // 2. afhankelijkheden <== pass in props.country as the second parameter. Otherwise you've created an infinite loop!
+    });  // 2. Dependencies <== pass in props.country as the second parameter. Otherwise you've created an infinite loop!
 
         const country = props.country;
         return (
