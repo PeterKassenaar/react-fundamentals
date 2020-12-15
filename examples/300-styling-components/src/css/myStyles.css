@@ -1,10 +1,6 @@
-/*my custom styles*/
+/* My custom styles - some examples on global styles */
 body {
     background-color: silver;
-
 }
 
-/*BEM*/
-.NavBar__Button__BgColor{
-
-}
+/* ... */
