@@ -9,7 +9,7 @@ import LoadingIndicator from "./Loader/LoadingIndicator";
 import CountryDetail from "./CountryDetail/CountryDetail";
 
 // the API-URLs to get the data from
-const url = 'https://restcountries.eu/rest/v2/all';
+const url = 'https://restcountries.eu/rest/v2/all?fields=name;capital;flag';
 const detail_url = 'https://restcountries.eu/rest/v2/name';
 
 // Our parent component - it holds the state for the child components
