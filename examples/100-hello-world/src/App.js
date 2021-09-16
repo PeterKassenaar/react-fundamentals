@@ -1,6 +1,5 @@
-import React from 'react';    // 1. Import the React Library
-import logo from './logo.svg';// 2. Import the logo used on the page
-import './App.css';           // 3. Import the styles used on this page
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
@@ -15,10 +14,10 @@ function App() {
           Today is { new Date().toDateString() }
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
         >
           Learn React
         </a>
