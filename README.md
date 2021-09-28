@@ -11,6 +11,7 @@ The repo has an `examples` folder with all the code examples. They are numbered 
 - 6xx - React Router
 - 7xx - React Hooks
 - 8xx - Redux State Management
+- 9xx - Testing introduction
 
 Every example is a small mini project. Perform an `npm install` for every folder you want to examine. This is not a monorepo.
 

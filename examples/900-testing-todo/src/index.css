@@ -1,0 +1,10 @@
+.todo p,
+.todo p:hover {
+  cursor: pointer;
+  width: 100%;
+}
+
+.done-todo {
+  text-decoration: line-through;
+  color: lightgrey;
+}
