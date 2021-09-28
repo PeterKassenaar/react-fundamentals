@@ -8,9 +8,10 @@ import VacationPicker from './VacationPicker/VacationPicker'
 import LoadingIndicator from "./Loader/LoadingIndicator";
 import CountryDetail from "./CountryDetail/CountryDetail";
 
-// the API-URLs to get the data from
-const url = 'https://restcountries.eu/rest/v2/all?fields=name;capital;flag';
-const detail_url = 'https://restcountries.eu/rest/v2/name';
+// the API-URLs to get the data from -OLD
+// const url = 'https://restcountries.com/rest/v3.1/all?fields=name;capital;flag';
+const url = 'https://restcountries.com/v2/all';
+const detail_url = 'https://restcountries.com/v2/name';
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
@@ -33,14 +34,17 @@ class App extends Component {
                         isLoaded: true,
                         countries: response.data
                     })
+                    console.log(response.data);
                 })
         }, 1000)
     }
 
     // get details for a specific country
     getCountry(name) {
+        console.log('Get country: ', name);
         axios.get(`${detail_url}/${name}`)
             .then(response => {
+                console.log(response.data[0]);
                 this.setState({
                     country: response.data[0]
                 })

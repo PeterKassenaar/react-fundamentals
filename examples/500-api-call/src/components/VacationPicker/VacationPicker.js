@@ -9,12 +9,11 @@ class VacationPicker extends Component {
         return (
             <div>
                 <ul className="list-group">
-                    {this.props.countries.map(country =>
+                    {this.props.countries.map((country, index) =>
                         <li
+                            key={index}
                             className="list-group-item"
-                            key={country.name}
-                            onClick={() => this.props.select(country.name)}
-                        >
+                            onClick={() => this.props.select(country.name)}>
                             <img src={country.flag} alt="flag" className={styles.imgFlag}/>
                             {country.name}
                         </li>
