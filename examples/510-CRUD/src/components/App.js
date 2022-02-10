@@ -35,8 +35,9 @@ class App extends Component {
 		// Post a new country
 		axios.post(
 			url,
-			country, {
-				headers: {'Content-Type': 'application/json'} // could/should be in constant variable.
+			country,
+			{
+				headers: {'Content-Type': 'application/json', 'X-Token': '7292y392934.928346'} // could/should be in constant variable.
 			}).then(res =>
 			// To be sure: fetch new countries.
 			// There ARE other ways of doing this: for instance Optimistic Update,
@@ -63,11 +64,19 @@ class App extends Component {
 
 	// U - Update a country
 	updateCountry(country){
-		// Workshop - update a specific country. There are multiple ways of doing this.
+		// Workshop - update a specific country.
+		// There are multiple ways of doing this.
 		//
-		// For instance, create an EditCountry.js component and pass the current country.
-		// OR: pass it to AddCountry.js and also pass a flag/new property that tells the
-		// component to update an existing country instead of adding a new one.
+		// For instance, create an EditCountry.js component
+		// and pass the current country.
+		// OR: pass it to AddCountry.js and also pass a
+		// flag/new property that tells the
+		// component to update an existing country instead
+		// of adding a new one.
+		//
+		// Global command:
+		// axios.put(url/country.id, newlyComposedCountry, headers:{...})
+		//       .then(...)
 		window.alert(`Workshop - Edit this country: ${country.name} `)
 	}
 
