@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import {addEmployee, decrement, increment, reset} from "../actions";
+import { decrement, increment, reset} from "../actions";
 import {connect} from "react-redux";
 
 // 4. Using mapDispatchToProps
 const mapDispatchToProps = (dispatch) => {
 	return {
-		add_employee: () =>dispatch(addEmployee()),
 		increment: () => dispatch(increment()),
 		decrement: () => dispatch(decrement()),// not using payload!
 		reset: () => dispatch(reset())
