@@ -5,7 +5,7 @@ import React, {useState, useEffect}from 'react';
 import axios from 'axios'
 import styles from "./CountriesViaApi.module.css";
 
-const url = 'https://restcountries.eu/rest/v2/all';
+const url = 'https://restcountries.com/v2/all';
 
 function CountriesViaApi(props) {
 	// State
