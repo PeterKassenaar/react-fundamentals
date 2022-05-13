@@ -1,8 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
-// Bootstrap styles
+// bootstrap stuff & custom styles
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// index.js
+// routing stuff
+import {BrowserRouter} from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </React.StrictMode>
+);
