@@ -1,4 +1,4 @@
-/*Main navigation styles*/
+/*Main navigation styles - edit per your needs */
 ul {
     list-style-type: none;
 }
@@ -21,4 +21,7 @@ ul a:hover {
 
 .activeRoute {
     border-bottom: 3px solid #09d3ac;
+}
+.inactiveRoute {
+    border-bottom: 3px solid transparent;
 }
