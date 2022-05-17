@@ -13,7 +13,8 @@ The repo has an `examples` folder with all the code examples. They are numbered 
 - 8xx - Redux State Management
 - 9xx - Testing introduction
 
-Every example is a small mini project. Perform an `npm install` for every folder you want to examine. This is not a monorepo.
+Every example is a small mini project. Perform an `npm install` for every folder/project you want to run. 
+This is not a monorepo.
 
 ## Tooling
 - Create React App: https://create-react-app.dev/
@@ -29,4 +30,4 @@ Every example is a small mini project. Perform an `npm install` for every folder
 Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://www.reacttraining.nl/dates or contact info@kassenaar.com.
 
-Copyright (C) 2014-2020 - www.reacttraining.nl
+Copyright (C) 2014-2022 - www.reacttraining.nl
