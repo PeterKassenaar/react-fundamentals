@@ -4,10 +4,10 @@ import logo from '../img/logo-react-small.png'
 
 // Child components
 import VacationPicker from './VacationPicker/VacationPicker'
+import AddCountries from "./AddCountries/AddCountries";
 
 // Data
 import countryData from '../data/CountryData';
-import AddCountries from "./AddCountries/AddCountries";
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
