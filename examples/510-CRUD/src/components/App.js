@@ -51,11 +51,20 @@ class App extends Component {
 	// R - Retrieve all countries
 	// Get all countries. Using Async/Await notation here.
 	async getCountries() {
-		const countries = await axios.get(url);
-		this.setState({
-			countries: countries.data,
-			isLoaded: true
-		})
+		const countries = await axios.get(url)
+			.catch(err=> {
+				console.log('ERROR! did you forget to start json-server? (npm run json-server)', err);
+			});
+		if(countries) {
+			this.setState({
+				countries: countries.data,
+				isLoaded: true
+			})
+		}else {
+			this.setState({
+				isLoaded: true
+			})
+		}
 	}
 
 	getCountry(id){
