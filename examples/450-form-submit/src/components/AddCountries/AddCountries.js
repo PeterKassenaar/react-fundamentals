@@ -18,7 +18,7 @@ class AddCountries extends Component {
         // value comes from, by retrieving the 'name' attribute.
         // Then set the correct state property
         const target = event.target;
-        const value = event.target.value;
+        const value = target.value;
         const name = target.name;
         this.setState({
             [name]: value
