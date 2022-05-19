@@ -1,5 +1,6 @@
 // AddCountriesClass.js - the same component as AddCountries.js, but now
-// in a function-style syntax
+// in a function-style syntax.
+// More info? Read https://www.pluralsight.com/guides/handling-multiple-inputs-with-single-onchange-handler-react
 import React, {useState} from "react";
 
 const AddCountriesFn = () => {
@@ -24,8 +25,6 @@ const AddCountriesFn = () => {
             ...country, // don't forget to first spread in the existing country..
             [name]: value // ..then update the correct property for this field
         })
-
-
     }
 
     // 2. addCountry - add a new country to the array of countries.
