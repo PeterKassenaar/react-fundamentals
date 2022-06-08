@@ -7,9 +7,15 @@
     border-radius: 4px;
     padding: 6px;
 }
-.info{
+
+.info {
     background-color: #daa6e6;
     color: #282c34;
     border-radius: 4px;
     padding: 6px;
+}
+
+/*illegal! No hyphens in classnames in Modules, unless you eject and tweak configuration yourself */
+.info-important {
+    background-color: #c1ab99;
 }
