@@ -8,6 +8,7 @@ import AddCountries from "./AddCountries/AddCountries";
 
 // Data
 import countryData from '../data/CountryData';
+import AddCountriesFunction from "./AddCountries/AddCountriesFunction";
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
                         {/*state lifted up to this component.*/}
                         {/*All functionality is handled inside the component for clarity.*/}
                         <AddCountries/>
+                        {/*<AddCountriesFunction />*/}
                     </div>
                 </div>
             </div>
