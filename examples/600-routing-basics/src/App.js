@@ -2,7 +2,7 @@ import logo from './img/logo-react-small.png';
 import MainNavigation from "./components/MainNavigation/MainNavigation";
 
 // import routing stuff
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 
 // components to be shown inside the router
 import Home from "./routes/Home/Home";
@@ -18,9 +18,14 @@ function App() {
             <hr/>
             <MainNavigation/>
             <Routes>
-                <Route path='/' element={<Home/>}/>
+                <Route path='/home' element={<Home/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/contact' element={<Contact/>}/>
+                {/*Navigate to home if no matching route is found*/}
+                <Route
+                    path="*"
+                    element={<Navigate to="/home" replace />}
+                />
             </Routes>
             <hr/>
 
