@@ -1,4 +1,4 @@
-// App.js
+// App.js - a class component
 import React, {Component} from 'react';
 import logo from '../img/logo-react-small.png';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import VacationPicker from './VacationPicker/VacationPicker'
 import LoadingIndicator from "./Loader/LoadingIndicator";
 import CountryDetail from "./CountryDetail/CountryDetail";
+import VacationPickerFunction from "./VacationPicker/VacationPickerFunction";
 
 // the API-URLs to get the data from -OLD
 // const url = 'https://restcountries.com/rest/v3.1/all?fields=name;capital;flag';
@@ -32,7 +33,7 @@ class App extends Component {
                 .then(response => {
                     this.setState({
                         isLoaded: true,
-                        countries: response.data
+                        countries: response.data // JSON
                     })
                     console.log(response.data);
                 })
@@ -68,7 +69,7 @@ class App extends Component {
                         }
                         <VacationPicker
                             countries={this.state.countries}
-                            select={(country) => this.getCountry(country)}
+                            submit={(country) => this.getCountry(country)}
                         />
                     </div>
                     <div className="col-md-6">

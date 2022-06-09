@@ -13,7 +13,7 @@ class VacationPicker extends Component {
                         <li
                             key={index}
                             className="list-group-item"
-                            onClick={() => this.props.select(country.name)}>
+                            onClick={() => this.props.submit(country.name)}>
                             <img src={country.flag} alt="flag" className={styles.imgFlag}/>
                             {country.name}
                         </li>
