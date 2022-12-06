@@ -13,9 +13,10 @@ class CatPics extends Component {
     render() {
         return (
             <div className="col">
-                {this.cats.map(cat =>
-                    <div>
-                        <img className="img-fluid" src={cat} alt="picture of cat"/>
+                {this.cats.map((cat, index) =>
+                    <div key={index}>
+                        <img className="img-fluid"
+                             src={cat} alt="picture of cat"/>
                     </div>
                 )}
             </div>
