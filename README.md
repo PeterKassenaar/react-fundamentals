@@ -30,4 +30,4 @@ This is not a monorepo.
 Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://www.reacttraining.nl/dates or contact info@kassenaar.com.
 
-Copyright (C) 2014-2022 - www.reacttraining.nl
+Copyright (C) 2014-2023 - www.reacttraining.nl
