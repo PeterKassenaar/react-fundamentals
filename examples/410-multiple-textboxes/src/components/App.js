@@ -4,11 +4,11 @@ import logo from '../img/logo-react-small.png'
 
 // Child components
 import VacationPicker from './VacationPicker/VacationPicker'
-import AddCountries from "./AddCountries/AddCountries";
+import AddCountriesClass from "./AddCountries/AddCountriesClass";
 
 // Data
 import countryData from '../data/CountryData';
-import AddCountriesFunction from "./AddCountries/AddCountriesFunction";
+import AddCountries from "./AddCountries/AddCountries";
 
 // Our parent component - it holds the state for the child components
 class App extends Component {
@@ -33,8 +33,8 @@ class App extends Component {
                         {/*Component below has *local* state, so no*/}
                         {/*state lifted up to this component.*/}
                         {/*All functionality is handled inside the component for clarity.*/}
-                        <AddCountries/>
-                        {/*<AddCountriesFunction />*/}
+                        <AddCountries />
+                        {/*<AddCountriesClass/>*/}
                     </div>
                 </div>
             </div>

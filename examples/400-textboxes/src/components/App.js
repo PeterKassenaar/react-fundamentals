@@ -1,5 +1,5 @@
 // App.js
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
@@ -10,34 +10,30 @@ import countryData from '../data/CountryData';
 import AddCountries from "./AddCountries/AddCountries";
 
 // Our parent component - it holds the state for the child components
-class App extends Component {
+const App = () => {
 
-    state = {
-        countries: countryData.countries,
-    };
+    const [countries] = useState(countryData.countries)
 
     // Render UI
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h1>
-                            <img src={logo} alt="react logo" width={80}/>
-                            React vacation picker
-                        </h1>
-                        <VacationPicker countries={this.state.countries}/>
-                    </div>
-                    <div className="col-md-6">
-                        {/*Component below has *local* state, so no*/}
-                        {/*state lifted up to this component.*/}
-                        {/*All functionality is handled inside the component for clarity.*/}
-                        <AddCountries/>
-                    </div>
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <h1>
+                        <img src={logo} alt="react logo" width={80}/>
+                        React vacation picker
+                    </h1>
+                    <VacationPicker countries={countries}/>
+                </div>
+                <div className="col-md-6">
+                    {/*Component below has *local* state, so no*/}
+                    {/*state lifted up to this component.*/}
+                    {/*All functionality is handled inside the component for clarity.*/}
+                    <AddCountries/>
                 </div>
             </div>
-        )
-    };
+        </div>
+    )
 }
 
 export default App;
