@@ -22,7 +22,7 @@ function App() {
 				</div>
 				<div className="col-6">
 					{/*2. Usage of Inline style (in JS-object notation) in component below */}
-					{/*<InlineStyles/>*/}
+					<InlineStyles/>
 
 					{/*<div style={headline}>*/}
 					{/*	This div has no '.headline' style, as it is enclosed in the above component.*/}
