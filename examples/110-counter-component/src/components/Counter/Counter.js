@@ -8,7 +8,7 @@ function Counter() {
 	const [counter, setCounter] = React.useState(0);
 
 	// 3. A function to update the counter, using the hook setCounter().
-	//    This will NOT work: counter = counter + 1;. We NEED setCounter to update the state.
+	//  The following will NOT work: counter = counter + 1;. We NEED setCounter to update the state.
 	const updateCounter = () => setCounter(counter + 1);
 
 	// 4. Return the UI of this component using JSX.
