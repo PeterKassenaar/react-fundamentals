@@ -1,5 +1,5 @@
 // App.js
-import React, {Component} from 'react';
+import React from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
@@ -10,43 +10,37 @@ import VacationPicker from './VacationPicker/VacationPicker'
 import countryData from '../data/CountryData';
 
 // Our parent component - it holds the state for the child components
-class App extends Component {
+const App = () => {
 
-    state = {
-        countries: countryData.countries,
-        currentCountry: countryData.countries[0]
-    };
+    const [countries] = React.useState(countryData.countries);
+    const [currentCountry, setCurrentCountry] = React.useState(countryData.countries[0]);
 
-    selectCountry(country) {
-        const newIndex = this.state.countries.indexOf(country);
-        this.setState({
-            currentCountry: this.state.countries[newIndex]
-        })
+    const selectCountry = country => {
+        const newIndex = countries.indexOf(country);
+        setCurrentCountry(countries[newIndex]);
     }
 
     // Render UI
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h1>
-                            <img src={logo} alt="react logo" width={80}/>
-                            React vacation picker
-                        </h1>
-                        {/*Upon selecting a country, a new currentCountry is set*/}
-                        <VacationPicker
-                            select={(country) => this.selectCountry(country)}
-                            countries={this.state.countries}/>
-                    </div>
-                    <div className="col">
-                        {/*currentCountry is passed as a prop to the detail component*/}
-                        <CountryDetail country={this.state.currentCountry}/>
-                    </div>
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <h1>
+                        <img src={logo} alt="react logo" width={80}/>
+                        React vacation picker
+                    </h1>
+                    {/*Upon selecting a country, a new currentCountry is set*/}
+                    <VacationPicker
+                        select={country => selectCountry(country)}
+                        countries={countries}/>
+                </div>
+                <div className="col">
+                    {/*currentCountry is passed as a prop to the detail component*/}
+                    <CountryDetail country={currentCountry}/>
                 </div>
             </div>
-        )
-    };
+        </div>
+    )
 }
 
 export default App;
