@@ -5,9 +5,9 @@ import Counter from "./Counter/Counter";
 function HelloReact() {
     return (
         <div className="container">
-            Hello React!
+            <h2>Hello React!</h2>
             {/*Another imported component*/}
-            <Counter/>
+            {/*<Counter/>*/}
         </div>
     )
 }

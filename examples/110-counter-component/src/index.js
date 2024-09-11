@@ -6,7 +6,9 @@ import HelloReact from "./components/HelloReact";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // We now render HelloReact as Top Level Component.
-ReactDOM.render(
-	<HelloReact/>,
-	document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+	<React.StrictMode>
+		<HelloReact />
+	</React.StrictMode>
 );
