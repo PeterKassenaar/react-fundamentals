@@ -1,8 +1,8 @@
 // FileNotFound.js
 import {Link} from "react-router-dom";
 
-const FileNotFound = ()=>{
-    return(
+const FileNotFound = () => {
+    return (
         <div className="alert alert-danger">
             <h1>Sorry, File or Route not found!</h1>
             <p>
@@ -11,4 +11,4 @@ const FileNotFound = ()=>{
         </div>
     )
 }
-export  default FileNotFound
+export default FileNotFound

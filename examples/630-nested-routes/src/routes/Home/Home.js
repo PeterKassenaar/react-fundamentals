@@ -20,10 +20,10 @@ const Home = () => {
                         </li>
                     )}
                 </ul>
-                <button onClick={()=>navigate('/')} className="btn btn-info">Clear</button>
+                <button onClick={() => navigate('/')} className="btn btn-info">Clear</button>
             </div>
             <div className="col">
-               <Outlet />
+                <Outlet/>
             </div>
         </div>
     )

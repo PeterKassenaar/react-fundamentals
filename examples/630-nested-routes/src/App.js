@@ -11,7 +11,7 @@ import Contact from "./routes/Contact/Contact";
 import FileNotFound from "./routes/FileNotFound/FileNotFound";
 import CountryDetail from "./routes/CountryDetail/CountryDetail";
 
-function App() {
+const App = () => {
     return (
         <div className="container">
             <div className="row">

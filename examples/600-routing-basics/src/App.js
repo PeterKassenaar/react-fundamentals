@@ -9,7 +9,7 @@ import Home from "./routes/Home/Home";
 import About from "./routes/About/About";
 import Contact from "./routes/Contact/Contact";
 
-function App() {
+const App = () => {
     return (
         <div className="container">
             <h1>
