@@ -33,7 +33,7 @@ class AddCountry extends Component {
 
 		// 1. create a new country, based on the state
 		const newCountry = {
-			id: null,	// we need 'null' here, b/c json-server generates the id automagically.
+			id: Math.random(),	// Do not use IRL, as it might accidentally generate the same random number.
 			name: this.state.name,
 			capital: this.state.capital,
 			cost: this.state.cost,

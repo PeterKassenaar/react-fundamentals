@@ -1,7 +1,7 @@
 {
   "countries": [
     {
-      "id": 1,
+      "id": "1",
       "name": "USA",
       "capital": "Washington",
       "cost": 1250,
@@ -10,7 +10,7 @@
       "rating": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Netherlands",
       "capital": "Amsterdam",
       "cost": 795,
@@ -19,7 +19,7 @@
       "rating": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Belgium",
       "capital": "Brussels",
       "cost": 645,
@@ -28,7 +28,7 @@
       "rating": 0
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Japan",
       "capital": "Tokyo",
       "cost": 2895,
@@ -37,7 +37,7 @@
       "rating": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Brazil",
       "capital": "Brasilia",
       "cost": 4500,
@@ -46,7 +46,7 @@
       "rating": 0
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Australia",
       "capital": "Sydney",
       "cost": 8500,

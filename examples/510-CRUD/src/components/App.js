@@ -37,7 +37,7 @@ class App extends Component {
 			url,
 			country,
 			{
-				headers: {'Content-Type': 'application/json', 'X-Token': '7292y392934.928346'} // could/should be in constant variable.
+				headers: {'Content-Type': 'application/json'} // could/should be in constant variable.
 			}).then(res =>
 			// To be sure: fetch new countries.
 			// There ARE other ways of doing this: for instance Optimistic Update,

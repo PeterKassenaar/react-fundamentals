@@ -1,16 +1,19 @@
 {
-  "name": "hello-react",
+  "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.0",
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "json-server": "^0.16.3",
-    "popper.js": "^1.16.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "json-server": "^1.0.0-beta.2",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,7 +23,10 @@
     "json-server": "json-server countryData.json --watch --port 3001"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
