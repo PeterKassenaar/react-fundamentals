@@ -1,5 +1,5 @@
 // App.js
-import React, {Component} from 'react';
+import React from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
@@ -9,31 +9,28 @@ import VacationPicker from './VacationPicker/VacationPicker'
 import countryData from '../data/CountryData';
 
 // Our parent component - it holds the state for the child components
-class App extends Component {
+const App = () => {
 
-    state = {
-        countries: countryData.countries,
-    };
+    const [countries, setCountries] = React.useState(countryData.countries);
 
     // Render UI
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h1>
-                            <img src={logo} alt="react logo" width={80}/>
-                            React vacation picker
-                        </h1>
-                        <VacationPicker countries={this.state.countries}/>
-                    </div>
-                    <div className="col-md-6">
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <h1>
+                        <img src={logo} alt="react logo" width={80}/>
+                        React vacation picker
+                    </h1>
+                    <VacationPicker countries={countries}/>
+                </div>
+                <div className="col-md-6">
+                {/*    Empty, as there is nothing here in this example */}
 
-                    </div>
                 </div>
             </div>
-        )
-    };
+        </div>
+    )
 }
 
 export default App;

@@ -5,7 +5,10 @@ import App from "./components/App";
 // bootstrap stuff
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-ReactDOM.render(
-	<App/>,
-	document.getElementById('root')
+// The Top Level Component
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
 );
