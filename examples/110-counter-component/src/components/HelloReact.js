@@ -7,7 +7,7 @@ function HelloReact() {
         <div className="container">
             <h2>Hello React! - using <code>state</code> and <code>props</code>.</h2>
             {/*Another imported component*/}
-            {/*<Counter/>*/}
+            <Counter/>
         </div>
     )
 }
