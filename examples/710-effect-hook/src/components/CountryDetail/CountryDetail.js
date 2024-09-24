@@ -17,7 +17,7 @@ function CountryDetail(props) {
         return () => {
             console.log('Component updated');
         }
-    }, );  // 2. Dependencies <== pass in props.country as the second parameter. Otherwise you've created an infinite loop!
+    });  // 2. Dependencies <== pass in props.country as the second parameter. Otherwise you've created an infinite loop!
 
     return (
         <div>
