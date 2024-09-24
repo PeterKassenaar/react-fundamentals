@@ -8,6 +8,7 @@ import VacationPicker from './VacationPicker/VacationPicker'
 // Data
 import countryData from '../data/CountryData';
 import CountriesViaApi from "./CountriesViaApi/CountriesViaApi";
+import TestAudio from "./audio/TestAudio";
 
 // Our parent component - it holds the state for the child components
 // We are using function components here, to demonstrate the usage
@@ -40,6 +41,7 @@ function App() {
                     <VacationPicker
                         select={(country) => selectCountry(country)}
                         countries={countries}/>
+                    {/*<TestAudio />*/}
                 </div>
                 <div className="col-md-6">
                     <CountryDetail country={currentCountry}/>
