@@ -20,6 +20,7 @@ import React, {useEffect, useRef} from 'react';
 // audio whenever the url prop changes
 const AudioUrl = ({ url }) => {
     // Creates a 'ref' to access the audio element directly.
+    // More info on useRef(): https://react.dev/reference/react/useRef
     const audioRef = useRef();
 
     useEffect(() => {
