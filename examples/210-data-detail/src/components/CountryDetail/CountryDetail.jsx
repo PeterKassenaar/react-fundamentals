@@ -1,5 +1,4 @@
-// CountryDetail.js - show details of a specific country
-import React from 'react'
+// CountryDetail.jsx - show details of a specific country
 
 // A pure presentational component
 const CountryDetail = ({country}) => {

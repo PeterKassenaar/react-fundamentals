@@ -1,10 +1,10 @@
-// App.js
-import React from 'react';
+// App.jsx
+import React, {useState} from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
-import CountryDetail from "./CountryDetail/CountryDetail";
 import VacationPicker from './VacationPicker/VacationPicker'
+import CountryDetail from "./CountryDetail/CountryDetail.jsx";
 
 // Data
 import countryData from '../data/CountryData';
@@ -12,15 +12,17 @@ import countryData from '../data/CountryData';
 // Our parent component - it holds the state for the child components
 const App = () => {
 
-    const [countries] = React.useState(countryData.countries);
-    const [currentCountry, setCurrentCountry] = React.useState(countryData.countries[0]);
+    // 1. The data, or state in this component
+    const [countries] = useState(countryData.countries);
+    const [currentCountry, setCurrentCountry] = useState(countryData.countries[0]);
 
+    // 2. Select a specific country
     const selectCountry = country => {
         const newIndex = countries.indexOf(country);
         setCurrentCountry(countries[newIndex]);
     }
 
-    // Render UI
+    // 3. Render UI, return the component
     return (
         <div className="container">
             <div className="row">
