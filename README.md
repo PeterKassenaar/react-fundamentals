@@ -17,7 +17,8 @@ Every example is a small mini project. Perform an `npm install` for every folder
 This is not a monorepo.
 
 ## Tooling
-- Create React App: https://create-react-app.dev/
+- Create React App (deprecated, but still used a lot): https://create-react-app.dev/
+- Build a React App from scratch: https://react.dev/learn/build-a-react-app-from-scratch 
 - React Devtools (Chrome Extension): https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en 
 
 ## Useful links

@@ -1,5 +1,6 @@
-#webstorm stuff
+# IDE stuff
 .idea
+.vscode
 
 # Logs
 logs
