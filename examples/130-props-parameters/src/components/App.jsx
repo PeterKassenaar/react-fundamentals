@@ -1,13 +1,10 @@
-// App.js
-import React from 'react';
-
-// Child components
-import Counter from "./Counter/Counter";
-import DisplayCounter from "./DisplayCounter/DisplayCounter";
+import {useState} from "react";
+import Counter from "./Counter/Counter.jsx";
+import DisplayCounter from "./DisplayCounter/DisplayCounter.jsx";
 
 // Our parent component - it holds the state for the child components
 function App() {
-    const [counter, setCounter] = React.useState(0);
+    const [counter, setCounter] = useState(0);
 
     const incrementCounter = (val) => setCounter(counter + val);
 
@@ -22,4 +19,4 @@ function App() {
     );
 }
 
-export default App;
+export default App
