@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CatPics = () => {
     // looping over a static array with fully qualified URL's for (cat) pictures
     // will work correctly, when rendered inside an <img> tag
