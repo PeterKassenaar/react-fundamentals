@@ -1,8 +1,7 @@
-// VacationPicker.js - a simple React Vacation Picker component.
+// VacationPicker.jsx - a simple React Vacation Picker component.
 // We opted for using function based components here.
-import React from 'react';
 
-// VacationPicker.js
+// Main function, using props-destructuring directly into variable 'countries'.
 const VacationPicker = ({countries}) => {
     return (
         <div>

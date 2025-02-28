@@ -1,5 +1,5 @@
-// App.js
-import React from 'react';
+// App.jsx
+import React, {useState} from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
@@ -11,7 +11,7 @@ import countryData from '../data/CountryData';
 // Our parent component - it holds the state for the child components
 const App = () => {
 
-    const [countries, setCountries] = React.useState(countryData.countries);
+    const [countries] = useState(countryData.countries);
 
     // Render UI
     return (
