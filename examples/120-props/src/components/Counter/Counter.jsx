@@ -1,9 +1,7 @@
-import React from 'react'
 
-// Counter is now also a display (aka 'dumb') component.
-// It just shows two buttons. It receives the
-// functionality for the buttons from the
-// parent (<App />) component.
+// 1. This is a so called View component. The component only
+// shows the stuff that is passed in as props.
+// In this case the `props` object has a passed in function `increment`.
 function Counter(props) {
 	return (
 		<div>
