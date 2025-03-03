@@ -1,4 +1,4 @@
-// AddCountries - a component that shows controlled/uncontrolled
+// AddCountries.jsx - a component that shows controlled/uncontrolled
 // form components.
 // It uses local state for clarity in this demo
 // (i.e. all state and methods are handled inside
