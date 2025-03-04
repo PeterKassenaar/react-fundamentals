@@ -1,4 +1,4 @@
-// App.js
+// App.jsx
 import React, { useState } from 'react';
 import logo from '../img/logo-react-small.png'
 // Child components
@@ -15,6 +15,8 @@ const App = () => {
     const addCountry = (country) => {
         setCountries([...countries, country]);
         // TODO: POST  the new country to a database
+        // For now: logging the new country to the console
+        console.log('Adding to database: ' + country);
     }
 
     // Render UI
