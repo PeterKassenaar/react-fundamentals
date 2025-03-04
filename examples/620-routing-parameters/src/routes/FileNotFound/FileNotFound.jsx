@@ -1,4 +1,4 @@
-// FileNotFound.js
+// FileNotFound.jsx
 import {Link} from "react-router-dom";
 
 const FileNotFound = () => {

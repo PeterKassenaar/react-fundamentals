@@ -29,11 +29,11 @@ const CountryDetail = () => {
                 <li className="list-group-item">
                     details: {country.details}
                 </li>
-                {/*Some webpack magic below, to resolve the correct image*/}
+                {/*Some vite magic below, to resolve the correct image*/}
                 <li className="list-group-item">
                     <img
                         className="img-fluid"
-                        src={require(`../../img/countries/${country.img}`)}
+                        src={new URL(`../../img/countries/${country.img}`, import.meta.url).href}
                         alt={country.name}/>
                 </li>
             </ul>

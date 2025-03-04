@@ -1,4 +1,4 @@
-import React from 'react';
+// Contact.jsx - a simple Contact-component
 
 const Contact = () => {
     return (

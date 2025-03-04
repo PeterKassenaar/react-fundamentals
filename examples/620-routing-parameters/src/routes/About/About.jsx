@@ -1,4 +1,7 @@
-import {useNavigate} from 'react-router-dom'
+// about.jsx - a simple About-component
+// Importing the useNavigate() hook here, to navigate via program code
+// (in this case: a button).
+import {useNavigate} from "react-router-dom";
 
 const About = () => {
     const navigate = useNavigate();

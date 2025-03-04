@@ -1,19 +1,19 @@
 /*Main navigation styles - edit per your needs */
-nav ul {
+ul {
     list-style-type: none;
 }
 
-nav ul li {
+ul li {
     display: inline-block;
     width: 100px;
 
 }
 
-nav ul a {
+ul a {
     text-decoration: none;
 }
 
-nav ul a:hover {
+ul a:hover {
     background-color: rebeccapurple;
     color: whitesmoke;
     text-decoration: none;
@@ -21,7 +21,4 @@ nav ul a:hover {
 
 .activeRoute {
     border-bottom: 3px solid #09d3ac;
-}
-.inactiveRoute {
-    border-bottom: 3px solid transparent;
 }
