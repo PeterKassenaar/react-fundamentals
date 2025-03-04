@@ -1,19 +1,17 @@
-import React from 'react';
+// Contact.jsx - a simple Contact-component
 
-const About = () => {
+const Contact = () => {
     return (
         <div>
-            <h1>About Component</h1>
-            <h2>About us</h2>
+            <h1>Contact Component</h1>
+            <h2>Contact Us</h2>
             <hr/>
-            <div>Our Mission</div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut beatae blanditiis commodi
                 consectetur delectus deleniti deserunt earum facilis harum in inventore, iure magni odit omnis possimus
                 quo repudiandae temporibus.
             </p>
-
         </div>
     )
 }
-export default About
+export default Contact

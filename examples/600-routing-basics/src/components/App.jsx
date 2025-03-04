@@ -1,14 +1,15 @@
-import logo from './img/logo-react-small.png';
-import MainNavigation from "./components/MainNavigation/MainNavigation";
+import logo from '../img/logo-react-small.png';
 
 // import routing stuff
 import {Routes, Route, Navigate} from "react-router-dom";
+import MainNavigation from "./MainNavigation/MainNavigation.jsx";
+
+// Routed components
+import Home from "../routes/Home/Home.jsx";
+import About from "../routes/About/About.jsx";
+import Contact from "../routes/Contact/Contact.jsx";
 
 // components to be shown inside the router
-import Home from "./routes/Home/Home";
-import About from "./routes/About/About";
-import Contact from "./routes/Contact/Contact";
-
 const App = () => {
     return (
         <div className="container">
