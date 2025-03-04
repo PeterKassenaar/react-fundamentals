@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
@@ -7,11 +7,12 @@ import VacationPicker from './VacationPicker/VacationPicker'
 
 // Data
 import countryData from '../data/CountryData';
+import AddCountries from "./AddCountries/AddCountries";
 
 // Our parent component - it holds the state for the child components
 const App = () => {
 
-    const [countries, setCountries] = React.useState(countryData.countries);
+    const [countries] = useState(countryData.countries)
 
     // Render UI
     return (
@@ -25,8 +26,7 @@ const App = () => {
                     <VacationPicker countries={countries}/>
                 </div>
                 <div className="col-md-6">
-                {/*    Empty, as there is nothing here in this example */}
-
+                    {/* Intentionally left empty */}
                 </div>
             </div>
         </div>
