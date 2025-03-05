@@ -7,7 +7,6 @@ import VacationPicker from './VacationPicker/VacationPicker'
 
 // Data
 import countryData from '../data/CountryData';
-import AddCountries from "./AddCountries/AddCountries";
 
 // Our parent component - it holds the state for the child components
 const App = () => {
