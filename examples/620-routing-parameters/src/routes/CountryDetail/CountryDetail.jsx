@@ -7,14 +7,14 @@ const CountryDetail = () => {
     // the useParams() hook.
     // Here we assign them to simple variables, but we could have used state
     // with the useState() hook of course.
-    let params = useParams();
+    const params = useParams();
     const countries = countryData.countries;
     const id = params.id;
     const getCountry = id => countries.find(c => c.id === +id)
     const country = getCountry(id);
 
     return (
-        <div>
+        <div >
             <h3>Details for country</h3>
             <ul className="list-group">
                 <li className="list-group-item">

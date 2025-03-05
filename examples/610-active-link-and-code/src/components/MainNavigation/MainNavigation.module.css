@@ -22,3 +22,6 @@ ul a:hover {
 .activeRoute {
     border-bottom: 3px solid #09d3ac;
 }
+.inactiveRoute {
+    border-bottom: 3px solid transparent;
+}
