@@ -33,10 +33,12 @@ const VacationPicker = ({countries}) => {
                         {/*This is an *uncontrolled component* as it doesn't have */}
                         {/*an onChange handler and a value/checked property. */}
                         {/*Therefore, we use simply an onClick-handler. */}
-                        <input type="checkbox"
-                               onClick={() => checkCountry(country)}
-                        />&nbsp;
-                        {country.name}
+                        <label>
+                            <input type="checkbox"
+                                   onClick={() => checkCountry(country)}
+                            />&nbsp;
+                            {country.name}
+                        </label>
                     </li>
                 )}
             </ul>
