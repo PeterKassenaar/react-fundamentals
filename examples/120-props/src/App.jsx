@@ -1,6 +1,6 @@
 import {useState} from "react";
-import Counter from "./Counter/Counter.jsx";
-import DisplayCounter from "./DisplayCounter/DisplayCounter.jsx";
+import Counter from "./components/Counter/Counter.jsx";
+import DisplayCounter from "./components/DisplayCounter/DisplayCounter.jsx";
 
 // This is the 'top level component'. It is also called a 'smart' component
 // because it holds the state and the logic to update the state. These are
