@@ -13,9 +13,9 @@ class VacationPicker extends Component {
                         <li
                             key={index}
                             className="list-group-item"
-                            onClick={() => this.props.submit(country.name)}>
-                            <img src={country.flag} alt="flag" className={styles.imgFlag}/>
-                            {country.name}
+                            onClick={() => this.props.submit(country.name.common)}>
+                            <img src={country.flags?.png || country.flags?.svg} alt="flag" className={styles.imgFlag}/>
+                            {country.name.common}
                         </li>
                     )}
                 </ul>

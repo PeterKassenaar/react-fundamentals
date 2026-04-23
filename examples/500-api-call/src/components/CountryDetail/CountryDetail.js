@@ -5,13 +5,13 @@ import React from 'react'
 const CountryDetail = ({country}) => {
     return (
         <div>
-            <h2>{country.name}</h2>
+            <h2>{country.name?.common}</h2>
             <ul className="list-group">
                 <li className="list-group-item">
-                    name: {country.name}
+                    name: {country.name?.common}
                 </li>
                 <li className="list-group-item">
-                    capital: {country.capital}
+                    capital: {country.capital?.[0]}
                 </li>
                 <li className="list-group-item">
                     population: {country.population}
@@ -22,7 +22,7 @@ const CountryDetail = ({country}) => {
                 <li className="list-group-item">
                     <img
                         className="img-fluid"
-                        src={country.flag} alt={country.name}/>
+                        src={country.flags?.png || country.flags?.svg} alt={country.name?.common}/>
                 </li>
             </ul>
         </div>

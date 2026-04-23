@@ -11,8 +11,9 @@ import VacationPickerFunction from "./VacationPicker/VacationPickerFunction";
 
 // the API-URLs to get the data from -OLD
 // const url = 'https://restcountries.com/rest/v3.1/all?fields=name;capital;flag';
-const url = 'https://restcountries.com/v2/all';
-const detail_url = 'https://restcountries.com/v2/name';
+const fields = 'name,flags,capital,population,region,subregion';
+const url = `https://restcountries.com/v3.1/all?fields=${fields}`;
+const detail_url = 'https://restcountries.com/v3.1/name';
 
 // Our parent component - it holds the state for the child components
 class AppClass extends Component {
@@ -31,9 +32,11 @@ class AppClass extends Component {
         setTimeout(() => {
             axios.get(url)
                 .then(response => {
+                    // Sort countries alphabetically by their common name before storing them in state.
+                    const sortedCountries = [...response.data].sort((a, b) => a.name.common.localeCompare(b.name.common));
                     this.setState({
                         isLoaded: true,
-                        countries: response.data // JSON
+                        countries: sortedCountries // JSON
                     })
                     console.log(response.data);
                 })
@@ -43,7 +46,7 @@ class AppClass extends Component {
     // get details for a specific country
     getCountry(name) {
         console.log('Get country: ', name);
-        axios.get(`${detail_url}/${name}`)
+        axios.get(`${detail_url}/${encodeURIComponent(name)}?fullText=true&fields=${fields}`)
             .then(response => {
                 console.log(response.data[0]);
                 this.setState({
