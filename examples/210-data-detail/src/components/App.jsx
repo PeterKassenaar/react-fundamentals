@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 import logo from '../img/logo-react-small.png'
 
 // Child components
-import VacationPicker from './VacationPicker/VacationPicker'
-import CountryDetail from "./CountryDetail/CountryDetail.jsx";
+import VacationPicker from './VacationPicker/VacationPicker';
+import CountryDetail from './CountryDetail/CountryDetail';
 
 // Data
 import countryData from '../data/CountryData';
@@ -17,7 +17,8 @@ const App = () => {
     const [currentCountry, setCurrentCountry] = useState(countryData.countries[0]);
 
     // 2. Select a specific country
-    const selectCountry = country => {
+    const selectCountry = (country, event) => {
+        console.log('MIJN EVENT::', event);
         const newIndex = countries.indexOf(country);
         setCurrentCountry(countries[newIndex]);
     }
@@ -33,7 +34,7 @@ const App = () => {
                     </h1>
                     {/*Upon selecting a country, a new currentCountry is set*/}
                     <VacationPicker
-                        select={country => selectCountry(country)}
+                        select={(country, event) => selectCountry(country, event)}
                         countries={countries}/>
                 </div>
                 <div className="col">
