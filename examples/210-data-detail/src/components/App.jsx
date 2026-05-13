@@ -17,8 +17,7 @@ const App = () => {
     const [currentCountry, setCurrentCountry] = useState(countryData.countries[0]);
 
     // 2. Select a specific country
-    const selectCountry = (country, event) => {
-        console.log('MIJN EVENT::', event);
+    const selectCountry = (country) => {
         const newIndex = countries.indexOf(country);
         setCurrentCountry(countries[newIndex]);
     }
@@ -34,7 +33,7 @@ const App = () => {
                     </h1>
                     {/*Upon selecting a country, a new currentCountry is set*/}
                     <VacationPicker
-                        select={(country, event) => selectCountry(country, event)}
+                        select={country => selectCountry(country)}
                         countries={countries}/>
                 </div>
                 <div className="col">
