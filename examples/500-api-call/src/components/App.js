@@ -95,4 +95,52 @@ const App = () => {
     )
 }
 
+/*
+// Alternative implementation using plain fetch() and async/await:
+
+// 1. In useEffect:
+useEffect(() => {
+    const fetchCountries = async () => {
+        try {
+            // using setTimeout here, to emulate network delay.
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            
+            setIsLoaded(true);
+            // Sort countries alphabetically by their common name before storing them in state.
+            const sortedCountries = [...data].sort((a, b) => a.name.common.localeCompare(b.name.common));
+            setCountries(sortedCountries);
+        } catch (error) {
+            console.log('Error!! :: ' + error);
+            setError(error);
+            setIsLoaded(true);
+        }
+    };
+
+    fetchCountries();
+}, []);
+
+// 2. The getCountry function:
+const getCountry = async (name) => {
+    console.log('Getting country: ', name);
+    try {
+        const response = await fetch(`${detail_url}/${encodeURIComponent(name)}?fullText=true&fields=${fields}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data[0]);
+        setCountry(data[0]);
+    } catch (error) {
+        console.log('Error!! :: ' + error);
+        setError(error);
+    }
+};
+*/
+
 export default App;
